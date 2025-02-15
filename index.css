@@ -39,7 +39,7 @@ h1 {
 }
 
 .background {
-    /*background-image: url("background.png");*/
+    background-image: url("background.png");
     background-repeat: round;
     background-size: 100%
 }
@@ -52,18 +52,31 @@ h1 {
     margin: 0 auto;
 }
 
-.box{
-    margin-right:10%;
-    margin-left:10%;
+.box {
+    margin-right: 10%;
+    margin-left: 10%;
     border: 3px dashed lightblue;
     text-align: left;
     padding: 10px;
-}   
-.footer{
-    background-color:rgb(255, 255, 128);
 }
-body{
+
+.footer {
+    background-color: rgb(255, 255, 128);
+}
+
+body {
     font-family: 'Kiwi Maru', serif;
-    width: 100%; /* コンテンツの横幅を指定する */
-    overflow: auto; /* コンテンツの表示を自動に設定（スクロール） */
+    width: 100%;
+    /* コンテンツの横幅を指定する */
+    overflow: auto;
+    /* コンテンツの表示を自動に設定（スクロール） */
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+html {
+    overscroll-behavior: none;
+    overflow: hidden;
 }
