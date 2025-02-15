@@ -61,7 +61,7 @@ h1 {
 }
 
 .footer {
-    background-color: rgb(255, 255, 128);
+    background-color: rgb(188, 247, 196);
 }
 
 body {
@@ -74,6 +74,9 @@ body {
     margin-right: 0;
     margin-top: 0;
     margin-bottom: 0;
+    background-image: url("background.png");
+    background-repeat: round;
+    background-size: 10%
 }
 
 html {
