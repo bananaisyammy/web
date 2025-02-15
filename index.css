@@ -1,0 +1,69 @@
+div.Header {
+    position: fixed;
+    /* ヘッダーを固定する */
+    top: 0;
+    /* 上部から配置の基準位置を決める */
+    left: 0;
+    /* 左から配置の基準位置を決める */
+    width: 100%;
+    /* ヘッダーの横幅を指定する */
+    height: 10%;
+    /* ヘッダーの高さを指定する */
+    padding: 10px;
+    /* ヘッダーの余白を指定する(上下左右) */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* ヘッダーの背景色を指定する */
+    color: white;
+    /* フォントの色を指定する */
+}
+
+h4 {
+    text-align: center
+}
+
+p {
+    text-align: center
+}
+
+h2 {
+    text-align: center
+}
+
+h1 {
+    text-align: center
+}
+
+.header_icon {
+    margin-right: auto;
+    text-align: left;
+}
+
+.background {
+    /*background-image: url("background.png");*/
+    background-repeat: round;
+    background-size: 100%
+}
+
+.mokuzi {
+    border: 10px dashed white;
+    width: 300px;
+    background-color: lightblue;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.box{
+    margin-right:10%;
+    margin-left:10%;
+    border: 3px dashed lightblue;
+    text-align: left;
+    padding: 10px;
+}   
+.footer{
+    background-color:rgb(255, 255, 128);
+}
+body{
+    font-family: 'Kiwi Maru', serif;
+    width: 100%; /* コンテンツの横幅を指定する */
+    overflow: auto; /* コンテンツの表示を自動に設定（スクロール） */
+}
