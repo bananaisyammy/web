@@ -1,3 +1,10 @@
+#products{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 50px;
+}
+p.lead{ font-size: 14px; }
+
 .glyphicon { margin-right:5px; }
 .thumbnail
 {
@@ -55,3 +62,4 @@
 {
     margin: 0 0 11px;
 }
+

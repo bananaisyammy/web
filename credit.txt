@@ -1,0 +1,4 @@
+//grid list について
+https://codepen.io/ajaypatelaj/pen/NWyPpZ
+//text->element変換
+https://qiita.com/seijikohara/items/911f886d8eb79862870b
