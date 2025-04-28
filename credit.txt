@@ -1,3 +1,4 @@
+//backgroud制作by beta398,J.S
 //grid list について
 https://codepen.io/ajaypatelaj/pen/NWyPpZ
 //text->element変換

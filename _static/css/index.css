@@ -40,7 +40,7 @@ h1 {
 }
 
 body {
-    background-image: url("/web/.static/media/background.png");
+    background-image: url("/web/_static/media/background.png");
     background-repeat: round;
     background-size: 10%;
     margin: 0;
