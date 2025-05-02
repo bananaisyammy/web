@@ -4,6 +4,25 @@
     margin-top: 50px;
 }
 p.lead{ font-size: 14px; }
+img {
+    width: 70%; /* 親要素の幅に対して50% */
+    height: auto; /* 縦横比を維持する */
+}
+  
+.description{
+    white-space: nowrap; /* 改行を防ぐ */
+    overflow: hidden; /* はみ出した部分を隠す */
+    text-overflow: ellipsis; /* はみ出した部分に「...」を追加 */
+    width: 100%; /* 幅を指定（必要に応じて調整） */
+}
+.title{
+    white-space: nowrap; /* 改行を防ぐ */
+    overflow: hidden; /* はみ出した部分を隠す */
+    text-overflow: ellipsis; /* はみ出した部分に「...」を追加 */
+    width: 100%; /* 幅を指定（必要に応じて調整） */
+}
+
+
 
 .glyphicon { margin-right:5px; }
 .thumbnail
