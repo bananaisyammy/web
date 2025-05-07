@@ -12,12 +12,12 @@
       //CORS制限でローカルではfetchできないとき専用の実験
       //let json = JSON.parse(await fetch("/web/_static/media/trendTestData.json").then(response => response.text()));
       //できるときは以下を使う
-      let json = JSON.parse(await fetch("https://api.scratch.mit.edu/explore/projects?limit=16&offset=48&language=ja&mode=trending&q=*").then(response => response.text()));
+      let json = JSON.parse(await fetch("https://scratch-proxy-chi.vercel.app/api/hello?url=https://api.scratch.mit.edu/explore/projects?limit=16&offset=0&language=ja&mode=trending&q=*").then(response => response.text()));
       
       console.log(json);
       let list = [];
       for(const data of json){
-        if(await fetch("https://api.scratch.mit.edu/projects/"+data["id"]).then(response => response.ok)/**/){
+        if(!await fetch("https://api.scratch.mit.edu/projects/"+data["id"],{mode :"no-cors"}).then(response => response.ok)/**/){
           list.push({
             "description": data["instructions"],
             "title": data["title"],
