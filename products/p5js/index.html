@@ -1,0 +1,28 @@
+<head>
+  <meta charset="UTF-8">
+  <script src="/web/_static/js/index.js"></script>
+</head>
+
+<body>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+  <script>
+    run();
+    async function run() {
+      let list = await fetch("web/_static/media/p5jsList.json").then(response => response.text());
+      let tag = document.createElement("script");
+      tag.src = "/web/_static/js/list.js?list="+encodeURIComponent(list);
+      document.body.appendChild(tag);
+    }
+  </script>
+  <div id="header">
+  </div>
+  <font size=10%><b id=top>scratch見るリンク切れ防止版</b></font>
+  <p style="background-color: forestgreen;color: white;"><font size=7%><b id=top>見る</b></font></p>
+
+  <div id="list" class="row list-group">
+  </div>
+  
+  <div id=footer>
+  </div>
+</body>
