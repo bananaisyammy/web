@@ -12,36 +12,49 @@
       //CORS制限でローカルではfetchできないとき専用の実験
       //let json = JSON.parse(await fetch("/web/_static/media/trendTestData.json").then(response => response.text()));
       //できるときは以下を使う
-      let json = JSON.parse(await fetch("https://scratch-proxy-chi.vercel.app/api/hello?url=https://api.scratch.mit.edu/explore/projects?limit=16&offset=0&language=ja&mode=trending&q=*").then(response => response.text()));
-      
+      let json = JSON.parse(await fetch("https://scratch-proxy-chi.vercel.app/api/hello?url=https://api.scratch.mit.edu%2Fexplore%2Fprojects%3Flimit%3D16%26offset%3D0%26language%3Dja%26mode%3Dtrending%26q%3D%2A").then(response => response.text()));
+
       console.log(json);
       let list = [];
-      for(const data of json){
-        if(!await fetch("https://api.scratch.mit.edu/projects/"+data["id"],{mode :"no-cors"}).then(response => response.ok)/**/){
+      let i = 0;
+      for (const data of json) {
+        const isPush = await fetch("https://api.scratch.mit.edu/projects/" + data["id"], { mode: "no-cors" }).then(response => response.ok)/**/;
+        console.log(isPush);
+        if (isPush) {
           list.push({
             "description": data["instructions"],
             "title": data["title"],
-            "url": "https://scratch.mit.edu/projects/"+data["id"],
+            "url": "https://scratch.mit.edu/projects/" + data["id"],
             "imageSrc": data["image"],
             "creatorName": data["author"]["username"]
           });
           console.log("tuika");
+          i++;
+        } else {
+          i++;
+          //console.log("skip");
         }
       }
+      while (i < 15) {
+        await new Promise(resolve => setTimeout(resolve, 100)); // 100msごとにチェック
+      }
+
       console.log(JSON.parse(JSON.stringify(list)));
       let tag = document.createElement("script");
-      tag.src = "/web/_static/js/list.js?list="+encodeURIComponent(JSON.stringify(list));
+      tag.src = "/web/_static/js/list.js?list=" + encodeURIComponent(JSON.stringify(list));
       document.body.appendChild(tag);
     }
   </script>
   <div id="header">
   </div>
   <font size=10%><b id=top>scratch見るリンク切れ防止版</b></font>
-  <p style="background-color: forestgreen;color: white;"><font size=7%><b id=top>見る</b></font></p>
+  <p style="background-color: forestgreen;color: white;">
+    <font size=7%><b id=top>見る</b></font>
+  </p>
 
   <div id="list" class="row list-group">
   </div>
-  
+
   <div id=footer>
   </div>
 </body>
