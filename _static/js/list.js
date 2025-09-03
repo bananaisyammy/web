@@ -1,11 +1,7 @@
-//クエリパラメータから作りたいリストを得る
-console.log(new URL(document.currentScript.src).searchParams.get("list"));
-var listContents = JSON.parse(new URL(decodeURI(document.currentScript.src)).searchParams.get("list"));
+//var listContents = JSON.parse(new URL(decodeURI(document.currentScript.src)).searchParams.get("list"));
 //itemの原型をfetch
-var listItem;
-itemFetch();
-async function itemFetch(){
-    listItem = await fetch("/web/_static/html/list_item.html").then(response => response.text());
+async function itemFetch(listContents){
+    let listItem = await fetch("/web/_static/html/list_item.html").then(response => response.text());
     for (const content of listContents) {
         let child = listItem.replace("%description%",content["description"])
             .replace("%title%",content["title"])
