@@ -6,13 +6,11 @@
 <body>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+  <script src="/web/_static/js/list.js"></script>
   <script>
     run();
     async function run() {
       let list = await fetch("web/_static/media/p5jsList.json").then(response => response.text());
-      let tag = document.createElement("script");
-      tag.src = "/web/_static/js/list.js?list="+encodeURIComponent(list);
-      document.body.appendChild(tag);
     }
   </script>
   <div id="header">
