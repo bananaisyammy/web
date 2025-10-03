@@ -11,7 +11,7 @@
     run();
     async function run() {
       let list = await fetch("/web/_static/media/p5jsList.json").then(response => response.text());
-      itemFetch(list);
+      itemFetch(JSON.parse(list));
     }
   </script>
   <div id="header">
