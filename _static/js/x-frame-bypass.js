@@ -68,10 +68,17 @@ customElements.define('x-frame-bypass', class extends HTMLIFrameElement {
 	}
 	fetchProxy (url, options, i) {
 		const proxies = (options || {}).proxies || [
-			'https://api.allorigins.win/raw?url=',
-			'https://api.codetabs.com/v1/proxy/?quest=',
-			'https://cors-anywhere.herokuapp.com/'
-		]
+  'https://api.allorigins.win/raw?url=',
+  'https://api.codetabs.com/v1/proxy/?quest=',
+  'https://cors-anywhere.herokuapp.com/',
+  'https://thingproxy.freeboard.io/fetch/',
+  'https://jsonp.afeld.me/?url=',
+  'https://yacdn.org/proxy/',
+  'https://proxy.cors.sh/',
+  'https://api.scraperlink.com/?url=',
+  'https://crossorigin.me/',
+  	'https://api.cors.bridged.cc/',
+	]
 		return fetch(proxies[i] + encodeURIComponent(url), options).then(res => {
 			if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
 			return res
