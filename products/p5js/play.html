@@ -1,4 +1,39 @@
 <head>
 </head>
+
 <body>
+    <script>
+        async function loadApp() {
+            const dir = new URL(decodeURIComponent(document.location.href)).searchParams.get("source");
+            let setting = await fetch(dir + "setting.json").then(res => res.json());
+            setting = JSON.parse(JSON.stringify(setting));
+            if (setting.format_version != "1") console.error("Unsupported format version: " + setting.format_version);
+            
+            const iframe = document.createElement("iframe");
+            iframe.src = dir + setting.main;
+            iframe.style.position = "fixed";
+            iframe.style.top = "0";
+            iframe.style.left = "0";
+            iframe.style.width = "100%";
+            iframe.style.height = "100%";
+            iframe.style.border = "none";
+            document.body.appendChild(iframe);
+            
+            const description = document.createElement("div");
+            description.style.position = "fixed";
+            description.style.bottom = "0";
+            description.style.width = "100%";
+            description.style.left = "0";
+            description.style.backgroundColor = "rgb(192, 192, 192, 0.5)";
+            description.style.visibility = "hidden";
+            description.style.alpha = "0.5";
+            document.body.appendChild(description);
+            const title = document.createElement("h3");
+            title.style.color = "white";
+            title.style.margin = "5px";
+            title.innerText = setting.title;
+            description.appendChild(title);
+        }
+        loadApp();
+    </script>
 </body>

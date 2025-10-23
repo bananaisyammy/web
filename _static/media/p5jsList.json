@@ -2,7 +2,7 @@
     {
         "description": "scratch傾向リンク切れ防止ver",
         "title": "重力をいじるball",
-        "url": "apps/bananaumaiyo/gravityBall/",
+        "url": "play.html?source=apps/bananaumaiyo/gravityBall/",
         "imageSrc": "/web/_static/media/background.png",
         "creatorName": "bananaumaiyo"
     }
