@@ -19,21 +19,31 @@
             iframe.style.border = "none";
             document.body.appendChild(iframe);
             
-            const description = document.createElement("div");
-            description.style.position = "fixed";
-            description.style.bottom = "0";
-            description.style.width = "100%";
-            description.style.left = "0";
-            description.style.backgroundColor = "rgb(192, 192, 192, 0.5)";
-            description.style.visibility = "hidden";
-            description.style.alpha = "0.5";
-            document.body.appendChild(description);
+            const mainDiv = document.createElement("div");
+            mainDiv.style.position = "fixed";
+            mainDiv.style.bottom = "0";
+            mainDiv.style.width = "100%";
+            mainDiv.style.left = "0";
+            mainDiv.style.backgroundColor = "rgb(192, 192, 192, 0.5)";
+            mainDiv.style.visibility = "hidden";
+            mainDiv.style.alpha = "0.5";
+            document.body.appendChild(mainDiv);
             const title = document.createElement("h3");
             title.style.color = "white";
             title.style.margin = "5px";
             title.innerText = setting.title;
-            description.appendChild(title);
+            mainDiv.appendChild(title);
+            const description = document.createElement("p");
+            description.style.color = "white";
+            description.style.margin = "5px";
+            description.innerText = setting.title;
+            mainDiv.appendChild(title);
+
+            document.body.innerHTML = document.body.innerHTML + setting.button;
         }
         loadApp();
+        function onclick() {
+            
+        }
     </script>
 </body>
