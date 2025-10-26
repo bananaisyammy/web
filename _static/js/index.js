@@ -5,7 +5,7 @@ window.addEventListener("load", async (event) => {
     s.defer = true;
     s.src = "https://static.cloudflareinsights.com/beacon.min.js";
     s.setAttribute("data-cf-beacon", '{"token": "31653fcda84d4298a7ad3fd52126b073"}');
-    document.head.appendChild(s); // bodyの最後に追加
+    document.body.appendChild(s); // bodyの最後に追加
     document.querySelector("#header").innerHTML = await fetch("/web/_static/html/header.html").then(response => response.text());
     document.querySelector("#footer").innerHTML = await fetch("/web/_static/html/footer.html").then(response => response.text());
 });
