@@ -1,8 +1,15 @@
+<!doctype html>
+<html lang="ja">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8">
+    <title>Play</title>
 </head>
 
 <body>
     <script>
+        
         async function loadApp() {
             const dir = new URL(decodeURIComponent(document.location.href)).searchParams.get("source");
             let setting = await fetch(dir + "setting.json").then(res => res.json());
@@ -17,33 +24,64 @@
             iframe.style.width = "100%";
             iframe.style.height = "100%";
             iframe.style.border = "none";
+            iframe.style.zIndex = "1";
             document.body.appendChild(iframe);
             
-            const mainDiv = document.createElement("div");
-            mainDiv.style.position = "fixed";
-            mainDiv.style.bottom = "0";
-            mainDiv.style.width = "100%";
-            mainDiv.style.left = "0";
-            mainDiv.style.backgroundColor = "rgb(192, 192, 192, 0.5)";
-            mainDiv.style.visibility = "hidden";
-            mainDiv.style.alpha = "0.5";
-            document.body.appendChild(mainDiv);
-            const title = document.createElement("h3");
+            const infoDiv = document.createElement("div");
+            infoDiv.id = "infoDiv";
+            infoDiv.style.zIndex = "2";
+            infoDiv.style.position = "fixed";
+            infoDiv.style.bottom = "0";
+            infoDiv.style.width = "100%";
+            infoDiv.style.left = "0";
+            infoDiv.style.backgroundColor = "rgb(192, 192, 192, 0.5)";
+            infoDiv.style.visibility = "hidden";
+            infoDiv.style.alpha = "0.5";
+            document.body.appendChild(infoDiv);
+            const title = document.createElement("h2");
             title.style.color = "white";
             title.style.margin = "5px";
             title.innerText = setting.title;
-            mainDiv.appendChild(title);
+            infoDiv.appendChild(title);
+            const createrName = document.createElement("p");
+            createrName.style.color = "white";
+            createrName.style.fontSize = "10px";
+            createrName.innerHTML = "By " + setting.creater + " (ver " + setting.version + ")";
+            infoDiv.appendChild(createrName);
             const description = document.createElement("p");
             description.style.color = "white";
             description.style.margin = "5px";
-            description.innerText = setting.title;
-            mainDiv.appendChild(title);
-
-            document.body.innerHTML = document.body.innerHTML + setting.button;
+            description.innerHTML = setting.description;
+            infoDiv.appendChild(description);
+            const backButton = document.createElement("button");
+            backButton.style.position = "absolute";
+            backButton.style.bottom = "5px";
+            backButton.style.right = "10px";
+            backButton.style.fontSize = "1rem";
+            backButton.style.padding = "5px";
+            backButton.style.borderRadius = "10px";
+            backButton.style.border = "0";
+            backButton.type = "button";
+            backButton.innerText = "リストに戻る";
+            backButton.onclick = function() {
+                // 正しい遷移には location.href に代入する必要があります
+                // ここでは p5js の一覧ページへ戻る想定で相対パスを指定します
+                //alert("リストに戻ります");
+                window.location.href = '/web/products/p5js/index.html';
+            };
+            infoDiv.appendChild(backButton);
+            document.body.insertAdjacentHTML("beforeend", setting.button);
         }
         loadApp();
-        function onclick() {
-            
+        function onClick() {
+            //console.log("clicked");
+            const infoDiv = document.querySelector("#infoDiv");
+            if(infoDiv.style.visibility === "hidden"){
+                infoDiv.style.visibility = "visible";
+                //console.log("show");
+            }else{
+                infoDiv.style.visibility = "hidden";
+            }
         }
     </script>
 </body>

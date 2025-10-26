@@ -1,0 +1,47 @@
+<html style='margin: 0;height: 100%;'>
+
+<head>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="https://lo-th.github.io/Oimo.js/build/oimo.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+
+    <script type="text/javascript"
+        src="https://raw.githubusercontent.com/schteppe/cannon.js/refs/heads/master/build/cannon.min.js  "></script>
+    <!-- Three.js r106        -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/106/three.js"></script>
+    <!-- TrackballControls.js -->
+    <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r106/examples/js/controls/TrackballControls.js"></script>
+    <!-- cannon.js v0.6.2     -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.167.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.167.0/examples/jsm/"
+        }
+      }
+    </script>
+    <?!= HtmlService.createHtmlOutputFromFile("three_oimo").getContent(); ?>
+    <style>
+        body {
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        html {
+            overscroll-behavior: none;
+            overflow: hidden;
+        }
+    </style>
+    <script type="module" src="index.js""></script>
+</head>
+
+<body style='margin: 0;height: 100%;'>
+    <canvas id="myCanvas"></canvas>
+</body>
+
+</html>
