@@ -1,0 +1,9 @@
+{
+    "format_version": 1,
+    "title": "ホッケーゲーム(二人対戦)",
+    "description": "左の人はWとS、右の人は↑と↓で縦に移動して、ボールを跳ね返す。縦に移動している間は必殺ポイントが貯まる。必殺ポイントが2000を超えたあとにボールを跳ね返す時に左はA,右は⇢を押しながら跳ね返すと必殺技が発動する。毎回、跳ね返す時に左はD,右が⇢を押しながら跳ね返すと速度が上がる。<br>左がPLAYER1、右がPLAYER2だよ。7点取ったら勝ち",
+    "creater": "生姜焼き",
+    "version": "1.0.0",
+    "main": "index.html",
+    "button": "<button style='position:fixed;z-index: 2;border: 0;font-size: 1rem;text-align: center;border-radius: 10px;right:10px;' onclick='onClick()' type='button'>...</button>"
+}
