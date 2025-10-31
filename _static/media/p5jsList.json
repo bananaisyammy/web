@@ -23,7 +23,7 @@
     {
         "title": "ホッケーゲーム(二人対戦)",
         "description": "上下移動でスコアをためて必殺技!",
-        "url": "run.html?source=apps/syo-gayaki/hokkey/",
+        "url": "run.html?source=apps/syo-gayaki/airHokkey/",
         "imageSrc": "/web/_static/media/background.png",
         "creatorName": "生姜焼き"
     }
