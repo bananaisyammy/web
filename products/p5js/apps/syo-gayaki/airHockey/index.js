@@ -1,4 +1,3 @@
-
 const canvasX = 800;
 const canvasY = 400;
 
@@ -21,20 +20,29 @@ let hissatu1 = 0
 let hissatu2 = 0
 let hissatu = true
 
-
+let backgroundImg;
+let ballImg;
+let redBarImg;
+let blueBarImg;
 function setup() {
+    backgroundImg = loadImage('background.png');
+    ballImg = loadImage('ball.png');
+    redBarImg = loadImage('redBar.png');
+    blueBarImg = loadImage('blueBar.png');
     createCanvas(canvasX, canvasY);
-    background(canvasColor);
+    background(backgroundImg);
 }
 
 
 function draw() {
-    background(canvasColor)
+    background(backgroundImg);
     document.getElementById('target').textContent = "PLAYER1必殺[" + hissatu1 + "]" + "RESULT[" + score1 + "対" + score2 + "]" + "PLAYER必殺[" + hissatu2 + "]";
     fill("#ff0030")
-    quad(player1X, player1Y, player1X + 10, player1Y, player1X + 10, player1Y + 100, player1X, player1Y + 100)
+    //quad(player1X, player1Y, player1X + 10, player1Y, player1X + 10, player1Y + 100, player1X, player1Y + 100)
+    image(redBarImg,player1X,player1Y,10,100)
     fill("#00a0ff")
-    quad(player2X, player2Y, player2X + 10, player2Y, player2X + 10, player2Y + 100, player2X, player2Y + 100)
+    //quad(player2X, player2Y, player2X + 10, player2Y, player2X + 10, player2Y + 100, player2X, player2Y + 100)
+    image(blueBarImg,player2X,player2Y,10,100)
     if (keyIsDown("W".charCodeAt(0)) && player1Y > 0) {
         player1Y -= 8
         hissatu1 += 1
@@ -57,7 +65,8 @@ function draw() {
     else {
         fill("#eeff00")
     }
-    circle(ballX, ballY, 20)
+    //circle(ballX, ballY, 20)
+    image(ballImg,ballX-10,ballY-10,20,20)
     ballX += ballspeed
     ballY += speed
     if (ballY < 11) {
