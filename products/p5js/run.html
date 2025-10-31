@@ -15,7 +15,7 @@
             const dir = new URL(decodeURIComponent(document.location.href)).searchParams.get("source");
             let setting = await fetch(dir + "setting.json").then(res => res.json());
             setting = JSON.parse(JSON.stringify(setting));
-            if (setting.format_version != "1") console.error("Unsupported format version: " + setting.format_version);
+            if (setting.format_version != "2") console.error("Unsupported format version: " + setting.format_version);
             
             const iframe = document.createElement("iframe");
             iframe.src = dir + setting.main;
@@ -35,22 +35,22 @@
             infoDiv.style.bottom = "0";
             infoDiv.style.width = "100%";
             infoDiv.style.left = "0";
-            infoDiv.style.backgroundColor = "rgb(192, 192, 192, 0.5)";
+            infoDiv.style.backgroundColor = setting.backgroundColor;
             infoDiv.style.visibility = "hidden";
             infoDiv.style.alpha = "0.5";
             document.body.appendChild(infoDiv);
             const title = document.createElement("h2");
-            title.style.color = "white";
+            title.style.color = setting.textColor;
             title.style.margin = "5px";
             title.innerText = setting.title;
             infoDiv.appendChild(title);
             const createrName = document.createElement("p");
-            createrName.style.color = "white";
+            createrName.style.color = setting.textColor;
             createrName.style.fontSize = "10px";
             createrName.innerHTML = "By " + setting.creater + " (ver " + setting.version + ")";
             infoDiv.appendChild(createrName);
             const description = document.createElement("p");
-            description.style.color = "white";
+            description.style.color = setting.textColor;
             description.style.margin = "5px";
             description.innerHTML = setting.description;
             infoDiv.appendChild(description);

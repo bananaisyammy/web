@@ -23,11 +23,8 @@ let hissatu = true
 
 
 function setup() {
-
     createCanvas(canvasX, canvasY);
-
     background(canvasColor);
-
 }
 
 
