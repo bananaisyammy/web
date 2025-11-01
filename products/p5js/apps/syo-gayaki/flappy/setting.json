@@ -1,7 +1,7 @@
 {
     "format_version": 2,
     "title": "フラッピーフラッピー",
-    "description": "黄色のプレイヤーは上下左右キーで操作、青色のプレイヤーはWASDキーで操作！一人二役もできたり...",
+    "description": "黄色のプレイヤーは上左右キーで操作、青色のプレイヤーはWADキーで操作！一人二役もできたり...",
     "creater": "生姜焼き",
     "version": "1.0.0",
     "main": "index.html",
