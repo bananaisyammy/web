@@ -12,5 +12,11 @@
         "url": "run.html?source=apps/bananaumaiyo/withOimo/",
         "imageSrc": "/web/_static/media/background.png",
         "creatorName": "bananaumaiyo"
+    },{
+        "title": "ホッケーゲーム(二人対戦)",
+        "description": "上下移動でスコアをためて必殺技!",
+        "url": "run.html?source=apps/syo-gayaki/airHockey/",
+        "imageSrc": "/web/_static/media/background.png",
+        "creatorName": "生姜焼き"
     }
 ]
