@@ -1,5 +1,7 @@
 body{
     margin: 0px;
+    overflow: hidden;
+
 }
 #menu{
     height: 100%;
@@ -19,13 +21,9 @@ button{
 }
 #nextButton{
     position: absolute;
-    bottom: 42%;
-    left: 7%;
     filter: hue-rotate(-90deg);
 }
 #backButton{
     position: absolute;
-    top: 48.5%;
-    height: 12%;
     filter: hue-rotate(90deg);
 }
