@@ -21,10 +21,8 @@ img{
     padding-right: 0px;
     position: absolute;
 }
-.tabs{
-    background-color: rgba(255, 255, 255, 0.3);
-}
-:not(.shadow){
+
+button {
     z-index: 1;
 }
 .shadow{
@@ -34,4 +32,5 @@ img{
     padding: 0px;
     padding-right: 0px;
     position: absolute;
+    pointer-events: none;
 }
