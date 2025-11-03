@@ -1,17 +1,32 @@
 <!doctype html>
 <html lang="ja">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta charset="utf-8">
     <link rel="icon" href="/web/_static/media/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
     <title>Stella ～ゲ一ムの定食屋さん～</title>
 </head>
 
 <body>
-      <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "31653fcda84d4298a7ad3fd52126b073"}'></script><!-- End Cloudflare Web Analytics -->
+    <style>
+        html, body ,iframe{
+            margin: 0;
+            font-family: "DotGothic16",
+                sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+    <!-- Cloudflare Web Analytics -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+        data-cf-beacon='{"token": "31653fcda84d4298a7ad3fd52126b073"}'></script><!-- End Cloudflare Web Analytics -->
     <script>
-        
+
         async function loadApp() {
             const dir = new URL(decodeURIComponent(document.location.href)).searchParams.get("source");
             let setting = await fetch(dir + "setting.json").then(res => res.json());
@@ -29,6 +44,7 @@
             iframe.style.zIndex = "1";
             document.body.appendChild(iframe);
             
+
             const infoDiv = document.createElement("div");
             infoDiv.id = "infoDiv";
             infoDiv.style.zIndex = "2";
@@ -65,7 +81,7 @@
             backButton.style.border = "0";
             backButton.type = "button";
             backButton.innerText = "リストに戻る";
-            backButton.onclick = function() {
+            backButton.onclick = function () {
                 // 正しい遷移には location.href に代入する必要があります
                 // ここでは p5js の一覧ページへ戻る想定で相対パスを指定します
                 //alert("リストに戻ります");
@@ -73,15 +89,20 @@
             };
             infoDiv.appendChild(backButton);
             document.body.insertAdjacentHTML("beforeend", setting.button);
+            
+            const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+            iframeDocument.body.style.margin = 0;
+            iframeDocument.body.style.fontFamily = '"DotGothic16",sans-serif';
+            iframeDocument.body.style.fontWeight = "400";
+            iframeDocument.body.style.fontStyle = "normal"; 
         }
         loadApp();
         function onClick() {
             //console.log("clicked");
             const infoDiv = document.querySelector("#infoDiv");
-            if(infoDiv.style.visibility === "hidden"){
+            if (infoDiv.style.visibility === "hidden") {
                 infoDiv.style.visibility = "visible";
-                //console.log("show");
-            }else{
+            } else {
                 infoDiv.style.visibility = "hidden";
             }
         }
