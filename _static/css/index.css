@@ -77,12 +77,12 @@ body > *:not(#footer):not(#header) {
     padding: 10px;
 }
 
-#footer {
+/*#footer {
     background-color: rgb(188, 247, 196);
     margin: 0px;
-    padding: 10px 0; /* 上下のパディングを追加 */
+    padding: 10px 0; 
     width: 100%;
-    flex-shrink: 0; /* フッターが縮まないようにする */
-    position: sticky; /* コンテンツが少ない時は下部に固定 */
+    flex-shrink: 0; 
+    position: sticky; 
     bottom: 0;
-}
+}*/
