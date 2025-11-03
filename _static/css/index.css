@@ -39,17 +39,26 @@ h1 {
     text-align: left;
 }
 
-body {
+html, body {
     background-color: #76461B;
     /*background-image: url("/web/_static/media/background.png");
     background-repeat: round;
     background-size: 3%;*/
     margin: 0;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
+    padding: 0;
+    height: 100%; /* htmlとbody両方に100%の高さを設定 */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     font-family: "DotGothic16", sans-serif;
     font-weight: 400;
     font-style: normal;
+    overflow-x: hidden; /* 横スクロールを防止 */
+}
+
+/* メインコンテンツ部分は自動で伸縮するようにする */
+body > *:not(#footer):not(#header) {
+    flex: 1 0 auto; /* 自動で伸縮 */
 }
 
 .mokuzi {
@@ -71,5 +80,9 @@ body {
 #footer {
     background-color: rgb(188, 247, 196);
     margin: 0px;
-    padding: 0px;
+    padding: 10px 0; /* 上下のパディングを追加 */
+    width: 100%;
+    flex-shrink: 0; /* フッターが縮まないようにする */
+    position: sticky; /* コンテンツが少ない時は下部に固定 */
+    bottom: 0;
 }

@@ -9,7 +9,12 @@
   <div id="header">
   </div>
   <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "31653fcda84d4298a7ad3fd52126b073"}'></script><!-- End Cloudflare Web Analytics -->
-  <center><iframe style="border: 0;" src="/web/test/menutest2/" width="1080" height="810"></iframe></center>
+  <center><iframe style="border: 0;" src="/web/test/menutest2/" ></iframe></center>
+  <script>
+    const tabletWidth = (window.innerWidth <= window.innerHeight * 4/3) ? window.innerWidth : window.innerHeight*4/3;
+    document.querySelector("iframe").style.width = tabletWidth + "px";
+    document.querySelector("iframe").style.height = (tabletWidth * 3/4 )+ "px";
+  </script>
   <!--<h2 style="text-align:center">お知らせ</h2>
   <div class=box style="background-color:rgb(247, 255, 132)">
     <font style="color:rgb(255, 124, 124);text-align:center">
