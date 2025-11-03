@@ -57,9 +57,9 @@ html, body {
 }
 
 /* メインコンテンツ部分は自動で伸縮するようにする */
-body > *:not(#footer):not(#header) {
-    flex: 1 0 auto; /* 自動で伸縮 */
-}
+/*body > *:not(#footer):not(#header) {
+    flex: 1 0 auto; 
+}*/
 
 .mokuzi {
     border: 10px dashed white;
