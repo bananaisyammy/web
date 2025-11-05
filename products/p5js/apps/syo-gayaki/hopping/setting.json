@@ -1,7 +1,7 @@
 {
     "format_version": 2,
-    "title": "フラッピーフラッピー",
-    "description": "黄色のプレイヤーは上左右キーで操作、青色のプレイヤーはWADキーで操作！一人二役もできたり...",
+    "title": "ホッピング",
+    "description": "上下左右キーでプレイヤーを操作して右から出てくる敵を踏み潰すゲーム",
     "creater": "生姜焼き",
     "version": "1.0.0",
     "main": "index.html",
