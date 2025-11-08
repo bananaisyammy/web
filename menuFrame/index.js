@@ -90,10 +90,10 @@ function onBackButtonClick() {
 }
 function onContactButtonClick() {
     // iframe内からparent（親ウィンドウ）のURLを変更
-    window.parent.location.href = "/web/contact/";
+    window.parent.location.href = "/contact/";
 }
 async function setTabs() {
-    const gridContentsJson = await fetch("/web/_static/media/gridContents.json").then(response => response.json());
+    const gridContentsJson = await fetch("/_static/media/gridContents.json").then(response => response.json());
     this.document.getElementById("tab0").querySelector("h3").innerHTML = gridContentsJson[0].tabName;
     this.document.getElementById("tab1").querySelector("h3").innerHTML = gridContentsJson[1].tabName;
     this.document.getElementById("tab2").querySelector("h3").innerHTML = gridContentsJson[2].tabName;

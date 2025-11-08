@@ -1,6 +1,6 @@
 <head>
   <meta charset="UTF-8">
-  <script src="/web/_static/js/index.js"></script>
+  <script src="/_static/js/index.js"></script>
 </head>
 
 <body>
@@ -10,7 +10,7 @@
     run();
     async function run() {
       //CORS制限でローカルではfetchできないとき専用の実験
-      //let json = JSON.parse(await fetch("/web/_static/media/trendTestData.json").then(response => response.text()));
+  //let json = JSON.parse(await fetch("/_static/media/trendTestData.json").then(response => response.text()));
       //できるときは以下を使う
       let json = JSON.parse(await fetch("https://scratch-proxy-chi.vercel.app/api/hello?url=https://api.scratch.mit.edu%2Fexplore%2Fprojects%3Flimit%3D16%26offset%3D0%26language%3Dja%26mode%3Dtrending%26q%3D%2A").then(response => response.text()));
 
@@ -41,7 +41,7 @@
 
       console.log(JSON.parse(JSON.stringify(list)));
       let tag = document.createElement("script");
-      tag.src = "/web/_static/js/list.js?list=" + encodeURIComponent(JSON.stringify(list));
+  tag.src = "/_static/js/list.js?list=" + encodeURIComponent(JSON.stringify(list));
       document.body.appendChild(tag);
     }
   </script>

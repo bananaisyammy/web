@@ -83,5 +83,5 @@ function onBackButtonClick() {
 }
 function onContactButtonClick() {
     // iframe内からparent（親ウィンドウ）のURLを変更
-    window.parent.location.href = "/web/contact/";
+    window.parent.location.href = "/contact/";
 }
