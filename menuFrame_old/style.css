@@ -3,11 +3,6 @@ body{
     overflow: hidden;
     background-image: url('assets/menuBg.png');
     background-size: cover;
-    flex-direction: column;
-    font-family: "DotGothic16", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    user-select: none;
 }
 #menu{
     height: 100%;
@@ -31,7 +26,7 @@ button {
     z-index: 1;
 }
 .shadow{
-    z-index: 999;
+    z-index: 3;
     all: unset;
     border: none;
     padding: 0px;
@@ -49,17 +44,4 @@ button {
     overflow-y: auto;
     padding: 0px;
     box-sizing: border-box;
-}
-.tabs{
-    font-size: 20px;
-    color: white;
-    user-select: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.tabs h2 {
-    margin: 0;
-    padding: 0;
 }

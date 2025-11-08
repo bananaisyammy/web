@@ -4,13 +4,11 @@ body{
 }
 div.card {
   box-sizing: border-box;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  margin-left: 3px;
-  margin-right: 3px;
+  margin: 5px;
   width: var(--imgWidth);
   height: var(--imgHeight);
   position: relative;
+  transition: all 0.3s ease-in;
   z-index: 2;
 }
 
@@ -26,15 +24,4 @@ div.card .card__image {
   height: 100%;
   object-fit: cover;
   display: block;
-}
-
-.card__title {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  padding: 5px;
-  box-sizing: border-box;
 }

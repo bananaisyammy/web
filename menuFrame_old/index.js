@@ -69,8 +69,7 @@ window.onload = function () {
         shadow.style.left = (0) * widthPercent + "px";
         shadow.style.top = 0 * heightPercent + "px";
     });
-    
-    setTabs();
+    itemFetch(0);
 }
 
 function onTabClick(index) {
@@ -91,12 +90,4 @@ function onBackButtonClick() {
 function onContactButtonClick() {
     // iframe内からparent（親ウィンドウ）のURLを変更
     window.parent.location.href = "/web/contact/";
-}
-async function setTabs() {
-    const gridContentsJson = await fetch("/web/_static/media/gridContents.json").then(response => response.json());
-    this.document.getElementById("tab0").querySelector("h3").innerHTML = gridContentsJson[0].tabName;
-    this.document.getElementById("tab1").querySelector("h3").innerHTML = gridContentsJson[1].tabName;
-    this.document.getElementById("tab2").querySelector("h3").innerHTML = gridContentsJson[2].tabName;
-    this.document.getElementById("tab3").querySelector("h3").innerHTML = gridContentsJson[3].tabName;
-    await onTabClick(0); // 初期タブの内容を表示
 }
