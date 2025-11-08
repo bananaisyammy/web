@@ -1,0 +1,11 @@
+{
+    "format_version": 2,
+    "title": "ホッピング",
+    "description": "上下左右キーでプレイヤーを操作して右から出てくる敵を踏み潰すゲーム",
+    "creater": "生姜焼き",
+    "version": "1.0.0",
+    "main": "index.html",
+    "button": "<button style='position:fixed;z-index: 1;font-size: 1.5rem;text-align: center;border-radius: 20px;left:400px;top:0px;' onclick='onClick()' type='button'>説明</button>",
+    "textColor": "black",
+    "backgroundColor": "rgb(255, 255, 255, 0.5)"
+}

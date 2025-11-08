@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="icon" href="/web/_static/media/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <title>Stella ～ゲ一ムの定食屋さん～</title>
+</head>
+
+<body>
+    <style>
+        html, body ,iframe{
+            margin: 0;
+            font-family: "DotGothic16",
+                sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+    <!-- Cloudflare Web Analytics -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+        data-cf-beacon='{"token": "31653fcda84d4298a7ad3fd52126b073"}'></script><!-- End Cloudflare Web Analytics -->
+    <script>
+
+        async function loadApp() {
+            const dir = new URL(decodeURIComponent(document.location.href)).searchParams.get("source");
+            let setting = await fetch(dir + "setting.json").then(res => res.json());
+            setting = JSON.parse(JSON.stringify(setting));
+            if (setting.format_version != "2") console.error("Unsupported format version: " + setting.format_version);
+            
+            const iframe = document.createElement("iframe");
+            iframe.src = dir + setting.main;
+            iframe.style.position = "fixed";
+            iframe.style.top = "0";
+            iframe.style.left = "0";
+            iframe.style.width = "100%";
+            iframe.style.height = "100%";
+            iframe.style.border = "none";
+            iframe.style.zIndex = "1";
+            document.body.appendChild(iframe);
+            
+
+            const infoDiv = document.createElement("div");
+            infoDiv.id = "infoDiv";
+            infoDiv.style.zIndex = "2";
+            infoDiv.style.position = "fixed";
+            infoDiv.style.bottom = "0";
+            infoDiv.style.width = "100%";
+            infoDiv.style.left = "0";
+            infoDiv.style.backgroundColor = setting.backgroundColor;
+            infoDiv.style.visibility = "hidden";
+            infoDiv.style.alpha = "0.5";
+            document.body.appendChild(infoDiv);
+            const title = document.createElement("h2");
+            title.style.color = setting.textColor;
+            title.style.margin = "5px";
+            title.innerText = setting.title;
+            infoDiv.appendChild(title);
+            const createrName = document.createElement("p");
+            createrName.style.color = setting.textColor;
+            createrName.style.fontSize = "10px";
+            createrName.innerHTML = "By " + setting.creater + " (ver " + setting.version + ")";
+            infoDiv.appendChild(createrName);
+            const description = document.createElement("p");
+            description.style.color = setting.textColor;
+            description.style.margin = "5px";
+            description.innerHTML = setting.description;
+            infoDiv.appendChild(description);
+            const backButton = document.createElement("button");
+            backButton.style.position = "absolute";
+            backButton.style.bottom = "5px";
+            backButton.style.right = "10px";
+            backButton.style.fontSize = "1rem";
+            backButton.style.padding = "5px";
+            backButton.style.borderRadius = "10px";
+            backButton.style.border = "0";
+            backButton.type = "button";
+            backButton.innerText = "リストに戻る";
+            backButton.onclick = function () {
+                // 正しい遷移には location.href に代入する必要があります
+                // ここでは p5js の一覧ページへ戻る想定で相対パスを指定します
+                //alert("リストに戻ります");
+                window.location.href = '/web/products/p5js/index.html';
+            };
+            infoDiv.appendChild(backButton);
+            document.body.insertAdjacentHTML("beforeend", setting.button);
+            
+            const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+            iframeDocument.body.style.margin = 0;
+            iframeDocument.body.style.fontFamily = '"DotGothic16",sans-serif';
+            iframeDocument.body.style.fontWeight = "400";
+            iframeDocument.body.style.fontStyle = "normal"; 
+        }
+        loadApp();
+        function onClick() {
+            //console.log("clicked");
+            const infoDiv = document.querySelector("#infoDiv");
+            if (infoDiv.style.visibility === "hidden") {
+                infoDiv.style.visibility = "visible";
+            } else {
+                infoDiv.style.visibility = "hidden";
+            }
+        }
+    </script>
+</body>

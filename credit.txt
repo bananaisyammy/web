@@ -1,0 +1,7 @@
+//backgroud制作by beta398,J.S
+//grid list について
+https://codepen.io/ajaypatelaj/pen/NWyPpZ
+//text->element変換
+https://qiita.com/seijikohara/items/911f886d8eb79862870b
+//_staticファイルがgithubPagesで読み込んでくれなくてハマった時の対策
+https://qiita.com/Statham/items/af3d2b29266b7277e7cd

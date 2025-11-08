@@ -1,0 +1,11 @@
+{
+    "format_version": 2,
+    "title": "Gravity Ball",
+    "description": "画面をクリックして小さなボールを召喚できます。<br>左上のスタイダーは上から順に横重力、縦重力、横壁摩擦、縦壁摩擦で<br>チェククボックスはガバガバ(激重)当たり判定の有無です。",
+    "creater": "bananaumaiyo",
+    "version": "1.0.1",
+    "main": "index.html",
+    "button": "<button style='position:fixed;z-index: 2;border: 0;font-size: 1rem;text-align: center;border-radius: 10px;right:10px;' onclick='onClick()' type='button'>...</button>",
+    "textColor": "white",
+    "backgroundColor": "rgb(192, 192, 192, 0.5)"
+}

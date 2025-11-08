@@ -1,0 +1,25 @@
+<head>
+  <meta charset="UTF-8">
+  <script src="/web/_static/js/index.js"></script>
+</head>
+
+<body>
+  <script src="/web/_static/js/list.js"></script>
+  <script>
+    run();
+    async function run() {
+      let list = await fetch("/web/_static/media/p5jsList.json").then(response => response.text());
+      itemFetch(JSON.parse(list));
+    }
+  </script>
+  <div id="header">
+  </div>
+  <font size=10%><b id=top>しょうもないゲーム集 with js</b></font>
+  <p><font size=7%><b id=top>見る</b></font></p>
+
+  <div id="list" class="row list-group">
+  </div>
+  
+  <div id=footer>
+  </div>
+</body>

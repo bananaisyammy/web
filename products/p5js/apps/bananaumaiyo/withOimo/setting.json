@@ -1,0 +1,11 @@
+{
+    "format_version": 2,
+    "title": "Oimo.jsで物理演算",
+    "description": "画面ドラックでカメラをぐりぐりできます。<br>画面をクリックして小さなボールを召喚できます。<br>マウスを動かさずに連打すると積み上げられます。<br>壊すと気持ち良い！",
+    "creater": "bananaumaiyo",
+    "version": "1.0.1",
+    "main": "index.html",
+    "button": "<button style='position:fixed;z-index: 2;border: 0;font-size: 1rem;text-align: center;border-radius: 10px;right:10px;' onclick='onClick()' type='button'>...</button>",
+    "textColor": "white",
+    "backgroundColor": "rgb(192, 192, 192, 0.5)"
+}

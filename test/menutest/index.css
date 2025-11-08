@@ -1,0 +1,31 @@
+body{
+    margin: 0px;
+}
+#menu{
+    height: 100%;
+    overflow: hidden;
+}
+
+img{
+    display: block;
+    margin: 0px;
+}
+button{
+    all: unset;
+    cursor: pointer;
+    border: none;
+    padding: 0px;
+    padding-right: 0px;
+}
+#nextButton{
+    position: absolute;
+    bottom: 42%;
+    left: 7%;
+    filter: hue-rotate(-90deg);
+}
+#backButton{
+    position: absolute;
+    top: 48.5%;
+    height: 12%;
+    filter: hue-rotate(90deg);
+}

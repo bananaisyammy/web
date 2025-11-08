@@ -1,0 +1,36 @@
+body{
+    margin: 0px;
+    overflow: hidden;
+    background-image: url('assets/menuBg.png');
+    background-size: cover;
+}
+#menu{
+    height: 100%;
+    overflow: hidden;
+}
+
+img{
+    display: block;
+    margin: 0px;
+}
+.button{
+    all: unset;
+    cursor: pointer;
+    border: none;
+    padding: 0px;
+    padding-right: 0px;
+    position: absolute;
+}
+
+button {
+    z-index: 1;
+}
+.shadow{
+    z-index: 2;
+    all: unset;
+    border: none;
+    padding: 0px;
+    padding-right: 0px;
+    position: absolute;
+    pointer-events: none;
+}
